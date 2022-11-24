@@ -2,11 +2,11 @@
 
 A pomodoro timer App, done for a Becode project.
 
-You can see the finish project `[here](YOURLINK.com).` (not yet, be patient !)
+You can see the finish project [here](YOURLINK.com). (not yet, be patient !)
 
 ## **Who did this project ?**
 
-`[Danaé](https://github.com/Da-nae)`
+[Danaé](https://github.com/Da-nae)
 
 ## **Why create this projet ?**
 
