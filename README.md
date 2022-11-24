@@ -1,4 +1,4 @@
-# **Titre**
+# **My Pomodoro 🍅**
 
 A pomodoro timer App, done for a Becode project.
 
