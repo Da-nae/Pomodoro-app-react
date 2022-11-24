@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-timer-hook": "^3.0.5"
   },
   "devDependencies": {
     "@becode/eslint-config": "^0.13.0",
