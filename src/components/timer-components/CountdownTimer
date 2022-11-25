@@ -1,8 +1,0 @@
-
-function Countdown() {
-    let seconds = seconds - 1;
-
-    if (seconds == 0){
-        ExpiredNotice(); 
-    }
-}
