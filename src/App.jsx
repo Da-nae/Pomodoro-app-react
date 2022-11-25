@@ -13,8 +13,10 @@ function App() {
     }
 
     const BtnMinus = () => {
-        let min = secs - 60;
-        setSecs(min);
+        if(secs > 60){
+            let min = secs - 60;
+            setSecs(min);
+        }
     }
 
     return (

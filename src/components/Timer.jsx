@@ -13,6 +13,8 @@ function Timer({secs, setSecs, isActive, setIsActive, BtnPlus, BtnMinus}){
     }
 
     useEffect(() => {
+
+        if(secs > 0){
         let interval = null;
 
         if (isActive) {
@@ -23,7 +25,7 @@ function Timer({secs, setSecs, isActive, setIsActive, BtnPlus, BtnMinus}){
             clearInterval(interval);
         }
         return () => clearInterval(interval);
-    }, [isActive, secs]);
+}}, [isActive, secs]);
 
     const Time = (secs) => {
             let hours = Math.floor(secs / (60 * 60));
