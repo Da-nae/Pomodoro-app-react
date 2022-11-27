@@ -54,16 +54,16 @@ function App() {
     return (
         <div className="App">
             <div className="flex justify-center">
-                <div className="block p-6 rounded-lg shadow-lg  bg-dark-salmon mt-10">
-                    <div className="btnsTop flex">
+                <div className="p-6 rounded-lg shadow-lg  bg-dark-salmon mt-10 overflow-hidden">
+                    <div className="btnsTop flex content-between items-center">
                         <button
                             type="button"
-                            className="btnTop text-bisque text-xl leading-tight font-medium mb-2 text-center" onClick={Worktime}>
+                            className="btnTop text-bisque mr-1" onClick={Worktime}>
                             Work timer
                         </button>
                         <button
                             type="button"
-                            className="btnTop text-dark-salmon bg-bisque text-xl leading-tight font-medium mb-2 text-center" onClick={Breaktime}>
+                            className="btnTop breakBtn text-txtgrey focus:text-bisque" onClick={Breaktime}>
                             Breaktime
                         </button>
                     </div>

@@ -20,6 +20,10 @@
     @apply flex flex-col text-bisque;
 }
 
-/* .btnTop {
-    @apply
-} */
+.breakBtn {
+    @apply relative ml-2 pl-1 z-10;
+}
+
+.btnTop {
+    @apply text-xl pb-2 leading-tight font-medium mb-2 text-center;
+}
