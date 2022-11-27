@@ -12,7 +12,15 @@ module.exports = {
         'txtgrey': '#4A5568',
         'pine': '#6E9887',
         'blueish': '#79B4A9',
-      }
+      },
+      textColor: {
+        "grey" : "v#4A5568",
+        "title" : "var(--color-secondary)",
+      },
+    backgroundColor: {
+      "dark" : "var(--color-primary)",
+      "light" : "var(--color-secondary)",
+    },
     },
   },
   plugins: [],
