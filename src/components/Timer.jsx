@@ -2,12 +2,12 @@ import {VscDebugRestart} from "react-icons/vsc";
 import {useEffect} from "react";
 
 function Timer({secs, setSecs, isActive, setIsActive, BtnPlus, BtnMinus, setIsShowing, reset, setReferenceTime, referenceTime}) {
-    // Button Start/Pause to activate and deactivate the timer
+    // Button Start/Pause to activate and deactivate the timer :
     function toggle() {
         setIsActive(!isActive);
     }
 
-    // Function to make the timer decrement 1 second at a time
+    // Function to make the timer decrement 1 second at a time and display a modal at the 0 count : 
     useEffect(() => {
         let interval = null;
 
