@@ -21,7 +21,7 @@ function Newentry(prop) {
     }
 
     return(
-        <section className="form flex justify-center content-around mb-4">
+        <section className="form flex justify-center content-around my-4">
             <input className="inputText rounded font-light border-2 border-darker p-1 cursor-pointer w-full" ref={inputRef} type="text" placeholder="New task" 
             onKeyPress={(e) => {if(e.key == "Enter") {
                 clickHandler();

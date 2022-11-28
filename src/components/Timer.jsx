@@ -75,7 +75,7 @@ function Timer({secs, setSecs, isActive, setIsActive, BtnPlus, BtnMinus, setIsSh
                     </button>
                 </div>
             </div>
-            <div className="flex content-center">
+            <div className="flex justify-center">
                 <button
                     type="button"
                     className="startTimer text-txtgrey btnStart inline-block"

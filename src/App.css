@@ -37,7 +37,7 @@
 }
 
 .toDoEntries li {
-    margin: 20px 0px;
+    margin: 10px 0px;
 }
 
 input:checked + label {
