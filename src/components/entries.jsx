@@ -16,19 +16,20 @@ function Entries(prop) {
 
         prop.setEntries(checkedEntry);
     };
-
+    
     const handleRemove = id => {
         const newEntries = [...prop.entries].filter(entry => entry.id !== id);
         prop.setEntries(newEntries);
+        localStorage.setItem(LSKEY + ".entries", JSON.stringify(newEntries))
     }
 
     return (
         <section className="toDoEntries">
-            <ul className='p-0'>
+            <ul className='p-0 flex flex-col justify-around'>
                 {prop.entries.map((entry) => (
                     <li 
                         key={entry.id} 
-                        className={"flex flex-row justify-start" + entry.complete ? "true" : "false"}
+                        className={entry.complete ? "true" : "false"}
                     >
                         <input 
                             type="checkbox" checked={entry.complete}

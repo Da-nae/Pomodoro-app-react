@@ -17,23 +17,22 @@ function App() {
 
     // import of the todo list :
     const initialEntries = [];
-    const firstUpdate = useState(true);
     const LSKEY = "MyTodoApp";
     const [entries, setEntries] = useState(initialEntries);
 
     useEffect(() => {
-        if (firstUpdate.current) {
-            firstUpdate.current = false;
-            return;
+        if (entries.length > 1) {
+            localStorage.setItem(LSKEY + ".entries", JSON.stringify(entries));
         }
-        localStorage.setItem(LSKEY + ".entries", JSON.stringify(entries));
     }, [entries]);
 
     useEffect(() => {
         const saveEntries = JSON.parse(
             localStorage.getItem(LSKEY + ".entries"),
         );
-        setEntries(saveEntries ?? []);
+        if (saveEntries) {
+            setEntries(saveEntries);
+        }
     }, []);
 
     // Button to add a minute to the timer :
@@ -130,10 +129,10 @@ function App() {
                         )}
                     </div>
                 </div>
-                <div className="todo text-left flex flex-col items-center bg-white w-4/5 m-auto p-4 mt-24 rounded-xl max-w-lg shadow-lg overflow-hidden">
-                <Title />
-                <Entries entries={entries} setEntries={setEntries} />
-                <Newentry entries={entries} setEntries={setEntries} />
+                <div className="todo text-left flex flex-col items-center bg-white w-4/5 m-auto p-4 mt-24 rounded-xl max-w-md shadow-lg overflow-hidden">
+                    <Title />
+                    <Entries entries={entries} setEntries={setEntries} />
+                    <Newentry entries={entries} setEntries={setEntries} />
                 </div>
             </div>
         </div>
