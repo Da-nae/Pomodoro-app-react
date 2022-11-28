@@ -1,15 +1,16 @@
 import "./App.css";
 import React from "react";
 import Timer from "./components/Timer.jsx";
-import {useState} from "react";
-// test 
 import Modal from "./components/modal";
+
+import {useState} from "react";
 
 function App() {
     const [secs, setSecs] = useState(25 * 60);
     const [isActive, setIsActive] = useState(false);
     const [isShowing, setIsShowing] = useState(false);
     const [referenceTime, setReferenceTime] = useState(Date.now());
+    const [theme, setTheme] = useState('');
 
     // Button to add a minute to the timer :
     const BtnPlus = () => {
@@ -39,7 +40,8 @@ function App() {
     // Button to switch from work to break : 
     const Breaktime = () => {
             if (!isActive) {
-                setSecs(5 *60);
+                setSecs(5 * 60);
+                setTheme("green");
             }
         };
 
@@ -47,22 +49,30 @@ function App() {
     const Worktime = () => {
         if (!isActive) {
             setSecs(25 * 60);
+            setTheme("peach");
         }
     };
 
     return (
-        <div className="App">
+        <div className={theme == "green" ? "theme-green" : theme == "peach" ? "theme-peach" : "green"}>
+            <div className="w-screen h-screen bg-light">
+            <div className="flex px-2 py-2">
+            <img src="./src/assets/pomodoro.png" className="w-6 mx-1" />
+            <h1 className="text-darker text-xl leading-tight font-medium">
+                My pomodoro
+            </h1>
+        </div>
             <div className="flex justify-center">
-                <div className="p-6 rounded-lg shadow-lg  bg-dark-salmon mt-10 overflow-hidden">
+                <div className="p-6 rounded-lg shadow-lg  bg-darker mt-10 overflow-hidden">
                     <div className="btnsTop flex content-between items-center">
                         <button
                             type="button"
-                            className="btnTop text-bisque mr-1" onClick={Worktime}>
+                            className="btnTop text-title mr-1" onClick={Worktime}>
                             Work timer
                         </button>
                         <button
                             type="button"
-                            className="btnTop breakBtn text-txtgrey focus:text-bisque" onClick={Breaktime}>
+                            className="btnTop breakBtn text-txtgrey focus:text-light" onClick={Breaktime}>
                             Breaktime
                         </button>
                     </div>
@@ -81,6 +91,7 @@ function App() {
                     {isShowing && <Modal setIsShowing={setIsShowing} isShowing={isShowing} reset={reset} />}
                 </div>
             </div>
+        </div>
         </div>
     );
 }

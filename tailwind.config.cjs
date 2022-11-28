@@ -7,18 +7,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'bisque': '#ffe4c4',
-        'dark-salmon': '#e9967a',
         'txtgrey': '#4A5568',
-        'pine': '#6E9887',
-        'blueish': '#79B4A9',
+        'darker': "var(--color-primary)",
+        'light' : 'var(--color-secondary)',
+        'darker-op' : 'var(--color-opposite-dark)',
+        'light-op' : 'var(--color-opposite-light)'
       },
       textColor: {
-        "grey" : "v#4A5568",
+        "grey" : "#4A5568",
         "title" : "var(--color-secondary)",
       },
       backgroundColor: {
-        "dark" : "var(--color-primary)",
+        "darker" : "var(--color-primary)",
         "light" : "var(--color-secondary)",
       },
     },

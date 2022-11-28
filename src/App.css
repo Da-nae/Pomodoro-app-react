@@ -5,19 +5,23 @@
 .theme-peach {
     --color-primary: #e9967a;
     --color-secondary: #ffe4c4;
+    --color-opposite-light: #bae6d4;
+    --color-opposite-dark: #6e9887;
 }
 
 .theme-green {
     --color-primary: #6e9887;
-    --color-secondary: #79b4a9;
+    --color-secondary: #bae6d4;
+    --color-opposite-light: #ffe4c4;
+    --color-opposite-dark: #e9967a;
 }
 
 .btnStart {
-    @apply bg-bisque px-6 py-2.5 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-pine hover:shadow-lg hover:text-bisque transition duration-150 ease-in-out;
+    @apply bg-light px-6 py-2.5 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-darker-op hover:shadow-lg hover:text-light transition duration-150 ease-in-out;
 }
 
 .btnPlus {
-    @apply flex flex-col text-bisque;
+    @apply flex flex-col text-light;
 }
 
 .breakBtn {
@@ -29,5 +33,5 @@
 }
 
 .modalbtn {
-    @apply rounded-md p-1 text-txtgrey hover:bg-blueish;
+    @apply rounded-md p-1 text-txtgrey hover:bg-light-op;
 }

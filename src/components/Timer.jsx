@@ -1,7 +1,7 @@
 import {VscDebugRestart} from "react-icons/vsc";
 import {useEffect} from "react";
 
-function Timer({secs, setSecs, isActive, setIsActive, BtnPlus, BtnMinus, setIsShowing, reset, referenceTime, referenceTime}) {
+function Timer({secs, setSecs, isActive, setIsActive, BtnPlus, BtnMinus, setIsShowing, reset, setReferenceTime, referenceTime}) {
     // Button Start/Pause to activate and deactivate the timer
     function toggle() {
         setIsActive(!isActive);
@@ -84,7 +84,7 @@ function Timer({secs, setSecs, isActive, setIsActive, BtnPlus, BtnMinus, setIsSh
                 </button>
                 <button
                     type="button"
-                    className="text-bisque mx-2"
+                    className="text-light mx-2"
                     onClick={reset}>
                     <VscDebugRestart />
                 </button>
