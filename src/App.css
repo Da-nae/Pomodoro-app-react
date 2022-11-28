@@ -35,3 +35,11 @@
 .modalbtn {
     @apply rounded-md p-1 text-txtgrey hover:bg-light-op;
 }
+
+.toDoEntries li {
+    margin: 20px 0px;
+}
+
+input:checked + label {
+    text-decoration: line-through;
+}

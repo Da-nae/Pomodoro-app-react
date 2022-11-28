@@ -2,8 +2,11 @@ import "./App.css";
 import React from "react";
 import Timer from "./components/Timer.jsx";
 import Modal from "./components/modal";
+import Title from "./components/title";
+import Entries from "./components/entries";
+import Newentry from "./components/newEntry";
 
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 function App() {
     const [secs, setSecs] = useState(25 * 60);
@@ -11,6 +14,27 @@ function App() {
     const [isShowing, setIsShowing] = useState(false);
     const [referenceTime, setReferenceTime] = useState(Date.now());
     const [theme, setTheme] = useState("");
+
+    // import of the todo list :
+    const initialEntries = [];
+    const firstUpdate = useState(true);
+    const LSKEY = "MyTodoApp";
+    const [entries, setEntries] = useState(initialEntries);
+
+    useEffect(() => {
+        if (firstUpdate.current) {
+            firstUpdate.current = false;
+            return;
+        }
+        localStorage.setItem(LSKEY + ".entries", JSON.stringify(entries));
+    }, [entries]);
+
+    useEffect(() => {
+        const saveEntries = JSON.parse(
+            localStorage.getItem(LSKEY + ".entries"),
+        );
+        setEntries(saveEntries ?? []);
+    }, []);
 
     // Button to add a minute to the timer :
     const BtnPlus = () => {
@@ -106,8 +130,12 @@ function App() {
                         )}
                     </div>
                 </div>
+                <div className="todo text-left flex flex-col items-center bg-white w-4/5 m-auto p-4 mt-24 rounded-xl max-w-lg shadow-lg overflow-hidden">
+                <Title />
+                <Entries entries={entries} setEntries={setEntries} />
+                <Newentry entries={entries} setEntries={setEntries} />
+                </div>
             </div>
-            
         </div>
     );
 }
