@@ -27,3 +27,7 @@
 .btnTop {
     @apply text-xl pb-2 leading-tight font-medium mb-2 text-center;
 }
+
+.modalbtn {
+    @apply rounded-md p-1 text-txtgrey hover:bg-blueish;
+}

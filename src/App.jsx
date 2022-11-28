@@ -3,13 +3,12 @@ import React from "react";
 import Timer from "./components/Timer.jsx";
 import {useState} from "react";
 // test 
-import useModal from "./components/useModal";
 import Modal from "./components/modal";
 
 function App() {
     const [secs, setSecs] = useState(25 * 60);
     const [isActive, setIsActive] = useState(false);
-    const { isShowing, toggle } = useModal();
+    const [isShowing, setIsShowing] = useState(false);
 
     // Button to add a minute to the timer :
     const BtnPlus = () => {
@@ -40,16 +39,19 @@ function App() {
     const Worktime = () => {
         if (!isActive) {
             setSecs(25 * 60);
+            useModalfunction();
         }
     };
 
     // Modal test
-    // const useModalfunction = () => {
-    //     if(secs == 0) {
-    //         isShowing();
-    //     }
-    // }
-    // useModalfunction();
+    const useModalfunction = () => {
+        if(secs == 0) {
+            setIsShowing(true);
+        }
+    }
+    function toggle() {
+        setIsShowing(!isShowing);
+    }
 
     return (
         <div className="App">
@@ -75,10 +77,8 @@ function App() {
                         BtnPlus={BtnPlus}
                         BtnMinus={BtnMinus}
                     />
-                        {/* <button className="modal-toggle" onClick={toggle}>
-                        Show modal
-                        </button>
-                        <Modal isShowing={isShowing} hide={toggle} /> */}
+                    <button onClick={toggle}>open modal</button>
+                    {isShowing && <Modal setIsShowing={setIsShowing} isShowing={isShowing} />}
                 </div>
             </div>
         </div>
