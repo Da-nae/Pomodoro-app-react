@@ -1,32 +1,26 @@
 import {VscDebugRestart} from "react-icons/vsc";
 import {useEffect} from "react";
 
-function Timer({secs, setSecs, isActive, setIsActive, BtnPlus, BtnMinus}) {
+function Timer({secs, setSecs, isActive, setIsActive, BtnPlus, BtnMinus, setIsShowing, reset, referenceTime, referenceTime}) {
     // Button Start/Pause to activate and deactivate the timer
     function toggle() {
         setIsActive(!isActive);
     }
 
-    // Button to reset the timer to 25min
-    function reset() {
-        setSecs(25 * 60);
-        setIsActive(false);
-    }
-
     // Function to make the timer decrement 1 second at a time
     useEffect(() => {
-        if (secs > 0) {
-            let interval = null;
+        let interval = null;
 
-            if (isActive) {
-                interval = setInterval(() => {
-                    setSecs((secs) => secs - 1);
-                }, 1000);
-            } else if (!isActive && secs !== 0) {
-                clearInterval(interval);
-            }
-            return () => clearInterval(interval);
+        if (secs > 0 && isActive) {
+            interval = setInterval(() => {
+                setSecs((secs) => secs - 1);
+            }, 1000);
+        } else if (!isActive && secs !== 0) {
+            clearInterval(interval);
+        } else if(secs == 0) {
+            setIsShowing(true);
         }
+        return () => clearInterval(interval);
     }, [isActive, secs]);
 
     // Display of the time on the page, changing the total of seconds to hours, minutes and seconds :

@@ -9,6 +9,7 @@ function App() {
     const [secs, setSecs] = useState(25 * 60);
     const [isActive, setIsActive] = useState(false);
     const [isShowing, setIsShowing] = useState(false);
+    const [referenceTime, setReferenceTime] = useState(Date.now());
 
     // Button to add a minute to the timer :
     const BtnPlus = () => {
@@ -28,10 +29,17 @@ function App() {
         }
     };
 
+
+    // Button to reset the timer to 25min
+    function reset() {
+        setSecs(25 * 60);
+        setIsActive(false);
+    }
+
     // Button to switch from work to break : 
     const Breaktime = () => {
             if (!isActive) {
-                setSecs(5 * 60);
+                setSecs(5 *60);
             }
         };
 
@@ -39,19 +47,8 @@ function App() {
     const Worktime = () => {
         if (!isActive) {
             setSecs(25 * 60);
-            useModalfunction();
         }
     };
-
-    // Modal test
-    const useModalfunction = () => {
-        if(secs == 0) {
-            setIsShowing(true);
-        }
-    }
-    function toggle() {
-        setIsShowing(!isShowing);
-    }
 
     return (
         <div className="App">
@@ -76,9 +73,12 @@ function App() {
                         isActive={isActive}
                         BtnPlus={BtnPlus}
                         BtnMinus={BtnMinus}
+                        setIsShowing={setIsShowing} isShowing={isShowing}
+                        reset={reset}
+                        referenceTime={referenceTime}
+                        setReferenceTime={setReferenceTime}
                     />
-                    <button onClick={toggle}>open modal</button>
-                    {isShowing && <Modal setIsShowing={setIsShowing} isShowing={isShowing} />}
+                    {isShowing && <Modal setIsShowing={setIsShowing} isShowing={isShowing} reset={reset} />}
                 </div>
             </div>
         </div>

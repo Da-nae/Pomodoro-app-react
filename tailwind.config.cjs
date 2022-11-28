@@ -17,10 +17,10 @@ module.exports = {
         "grey" : "v#4A5568",
         "title" : "var(--color-secondary)",
       },
-    backgroundColor: {
-      "dark" : "var(--color-primary)",
-      "light" : "var(--color-secondary)",
-    },
+      backgroundColor: {
+        "dark" : "var(--color-primary)",
+        "light" : "var(--color-secondary)",
+      },
     },
   },
   plugins: [],

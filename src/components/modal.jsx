@@ -1,4 +1,4 @@
-const Modal = ({setIsShowing, isShowing}) => {
+const Modal = ({setIsShowing, isShowing, reset}) => {
 
     return (
         <div className="modal-bg fixed flex pt-20 justify-center top-0 left-0 w-full h-full outline-none overflow-x-hidden overflow-y-auto z-10 bg-neutral-700/50">
@@ -21,7 +21,7 @@ const Modal = ({setIsShowing, isShowing}) => {
                     <button
                         type="button"
                         className="modalbtn modal-newtimer-button bg-bisque"
-                        // onClick={startAgain}
+                        onClick={ () => {setIsShowing(false), reset()}}
                     >
                         Start a new work timer
                     </button>
