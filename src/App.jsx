@@ -14,7 +14,7 @@ function App() {
     const [isActive, setIsActive] = useState(false);
     const [isShowing, setIsShowing] = useState(false);
     const [referenceTime, setReferenceTime] = useState(Date.now());
-    const [theme, setTheme] = useState("");
+    const [theme, setTheme] = useState("peach");
 
     // import of the todo list :
     const initialEntries = [];
@@ -54,7 +54,7 @@ function App() {
         }
     };
 
-    // Button to reset the timer to 25min
+    // Button to reset the timer to 25min (not use for now)
     function reset() {
         setSecs(25 * 60);
         setIsActive(false);
@@ -119,8 +119,11 @@ function App() {
                             setIsShowing={setIsShowing}
                             isShowing={isShowing}
                             reset={reset}
+                            Worktime={Worktime}
+                            Breaktime={Breaktime}
                             referenceTime={referenceTime}
                             setReferenceTime={setReferenceTime}
+                            theme={theme}
                         />
                         {isShowing && (
                             <Modal

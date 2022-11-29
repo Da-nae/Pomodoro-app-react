@@ -2,7 +2,7 @@ import {VscDebugRestart} from "react-icons/vsc";
 import {useEffect} from "react";
 import useInterval from 'use-interval';
 
-function Timer({secs, setSecs, isActive, setIsActive, BtnPlus, BtnMinus, setIsShowing, reset, setReferenceTime, referenceTime}) {
+function Timer({secs, setSecs, isActive, setIsActive, BtnPlus, BtnMinus, setIsShowing, reset, Worktime, Breaktime, theme}) {
     // Button Start/Pause to activate and deactivate the timer :
     function toggle() {
         setIsActive(!isActive);
@@ -87,7 +87,7 @@ function Timer({secs, setSecs, isActive, setIsActive, BtnPlus, BtnMinus, setIsSh
                 <button
                     type="button"
                     className="text-light mx-2"
-                    onClick={reset}>
+                    onClick={theme == "peach" ? Worktime : Breaktime}>
                     <VscDebugRestart />
                 </button>
             </div>
