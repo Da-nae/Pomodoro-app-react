@@ -55,11 +55,18 @@ function App() {
         }
     };
 
-    // Button to reset the timer to 25min (not use for now)
-    function reset() {
-        setSecs(25 * 60);
+    // Button to reset the timers
+    const BreaktimeReset = () => {
+        setSecs(5 * 60);
         setIsActive(false);
+        setTheme("green");
     }
+
+    const WorktimeReset = () => {
+        setSecs(25 * 60);
+        setTheme("peach");
+        setIsActive(false);
+    };
 
     // Button to switch from work to break :
     const Breaktime = () => {
@@ -119,9 +126,8 @@ function App() {
                             BtnMinus={BtnMinus}
                             setIsShowing={setIsShowing}
                             isShowing={isShowing}
-                            reset={reset}
-                            Worktime={Worktime}
-                            Breaktime={Breaktime}
+                            Worktime={WorktimeReset}
+                            Breaktime={BreaktimeReset}
                             theme={theme}
                             audio={audio}
                         />

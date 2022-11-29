@@ -1,7 +1,7 @@
 import {VscDebugRestart} from "react-icons/vsc";
 import {useEffect} from "react";
 
-function Timer({secs, setSecs, isActive, setIsActive, BtnPlus, BtnMinus, setIsShowing, reset, Worktime, Breaktime, theme, audio}) {
+function Timer({secs, setSecs, isActive, setIsActive, BtnPlus, BtnMinus, setIsShowing, Worktime, Breaktime, theme, audio}) {
     // Button Start/Pause to activate and deactivate the timer :
     function toggle() {
         setIsActive(!isActive);
