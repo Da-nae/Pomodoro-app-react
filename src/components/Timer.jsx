@@ -19,6 +19,7 @@ function Timer({secs, setSecs, isActive, setIsActive, BtnPlus, BtnMinus, setIsSh
             clearInterval(interval);
         } else if(secs == 0) {
             setIsShowing(true);
+            setIsActive(false);
         }
         return () => clearInterval(interval);
     }, [isActive, secs]);

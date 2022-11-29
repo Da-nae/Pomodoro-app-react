@@ -84,16 +84,17 @@ function App() {
                     ? "theme-peach"
                     : "green"
             }>
-            <div className="w-screen h-screen bg-light">
+            <div className="w-full h-full bg-light pb-52">
                 <div className="flex px-2 py-2">
                     <img src="./src/assets/pomodoro.png" className="w-6 mx-1" />
                     <h1 className="text-darker text-xl leading-tight font-medium">
                         My pomodoro
                     </h1>
                 </div>
-                <div className="flex justify-center">
-                    <div className="p-6 rounded-lg shadow-lg  bg-darker mt-10 overflow-hidden">
-                        <div className="btnsTop flex content-between items-center">
+                <div className="flex row flex-wrap items-start mx-auto">
+                    <div className="flex flex-col items-center justify-center content-center m-auto">
+                    <div className="p-6 rounded-lg shadow-lg  bg-darker mt-10 mx-2 overflow-hidden mb-14 flex flex-col items-center">
+                        <div className="btnsTop flex content-between items-center justify-center">
                             <button
                                 type="button"
                                 className="btnTop text-title mr-1"
@@ -124,17 +125,18 @@ function App() {
                             <Modal
                                 setIsShowing={setIsShowing}
                                 isShowing={isShowing}
-                                reset={reset}
+                                Worktime={Worktime}
                             />
                         )}
                     </div>
-                </div>
-                <div className="todo text-left flex flex-col items-center bg-white w-4/5 m-auto p-4 mt-24 rounded-xl max-w-md shadow-lg overflow-hidden">
+                    </div>
+                <div className="todo text-left flex flex-col items-center bg-white w-4/5 m-auto p-6 rounded-xl max-w-md shadow-lg overflow-hidden mt-10">
                     <Title />
                     <Entries entries={entries} setEntries={setEntries} />
                     <Newentry entries={entries} setEntries={setEntries} />
                 </div>
             </div>
+        </div>
         </div>
     );
 }
