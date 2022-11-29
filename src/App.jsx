@@ -86,7 +86,7 @@ function App() {
             }>
             <div className="w-full h-full bg-light pb-52">
                 <div className="flex px-2 py-2">
-                    <img src="/src/assets/pomodoro.png" className="w-6 mx-1" />
+                    <img src={"/src/assets/pomodoro.png"} className="w-6 mx-1" />
                     <h1 className="text-darker text-xl leading-tight font-medium">
                         My pomodoro
                     </h1>
