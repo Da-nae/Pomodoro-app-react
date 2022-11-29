@@ -126,6 +126,7 @@ function App() {
                                 setIsShowing={setIsShowing}
                                 isShowing={isShowing}
                                 Worktime={Worktime}
+                                theme={theme}
                             />
                         )}
                     </div>
