@@ -95,7 +95,7 @@ function App() {
                     ? "theme-peach"
                     : "green"
             }>
-            <div className="w-full h-full bg-light pb-96">
+            <div className="min-w-screen min-h-screen bg-light pb-96 overflow-hidden">
                 <div className="flex px-2 py-2">
                     <img src={pomodoro} alt="tomato timer" className="w-6 mx-1" />
                     <h1 className="text-darker text-xl leading-tight font-medium">
