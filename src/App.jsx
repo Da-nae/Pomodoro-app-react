@@ -6,6 +6,7 @@ import Title from "./components/title";
 import Entries from "./components/entries";
 import Newentry from "./components/newEntry";
 import pomodoro from "./assets/pomodoro.png";
+import soundbite from "./assets/soundbite.wav"
 
 import {useState, useEffect} from "react";
 
@@ -13,8 +14,8 @@ function App() {
     const [secs, setSecs] = useState(25 * 60);
     const [isActive, setIsActive] = useState(false);
     const [isShowing, setIsShowing] = useState(false);
-    const [referenceTime, setReferenceTime] = useState(Date.now());
     const [theme, setTheme] = useState("peach");
+    const audio = new Audio(soundbite);
 
     // import of the todo list :
     const initialEntries = [];
@@ -93,7 +94,7 @@ function App() {
                     </h1>
                 </div>
                 <div className="flex row flex-wrap items-start mx-auto">
-                    <div className="flex flex-col items-center justify-center content-center m-auto">
+                    <div className="flex flex-col items-center justify-center content-center m-auto mt-0">
                     <div className="p-6 rounded-lg shadow-lg  bg-darker mt-10 mx-2 overflow-hidden mb-14 flex flex-col items-center">
                         <div className="btnsTop flex content-between items-center justify-center">
                             <button
@@ -121,9 +122,8 @@ function App() {
                             reset={reset}
                             Worktime={Worktime}
                             Breaktime={Breaktime}
-                            referenceTime={referenceTime}
-                            setReferenceTime={setReferenceTime}
                             theme={theme}
+                            audio={audio}
                         />
                         {isShowing && (
                             <Modal

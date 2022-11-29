@@ -1,8 +1,7 @@
 import {VscDebugRestart} from "react-icons/vsc";
 import {useEffect} from "react";
-import useInterval from 'use-interval';
 
-function Timer({secs, setSecs, isActive, setIsActive, BtnPlus, BtnMinus, setIsShowing, reset, Worktime, Breaktime, theme}) {
+function Timer({secs, setSecs, isActive, setIsActive, BtnPlus, BtnMinus, setIsShowing, reset, Worktime, Breaktime, theme, audio}) {
     // Button Start/Pause to activate and deactivate the timer :
     function toggle() {
         setIsActive(!isActive);
@@ -21,6 +20,7 @@ function Timer({secs, setSecs, isActive, setIsActive, BtnPlus, BtnMinus, setIsSh
         } else if(secs == 0) {
             setIsShowing(true);
             setIsActive(false);
+            audio.play();
         }
         return () => clearInterval(interval);
     }, [isActive, secs]);
