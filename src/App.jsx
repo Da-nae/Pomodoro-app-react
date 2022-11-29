@@ -40,8 +40,10 @@ function App() {
     // Button to add a minute to the timer :
     const BtnPlus = () => {
         if (!isActive) {
+            if (secs <  216000) {
             let plus = secs + 60;
             setSecs(plus);
+            }
         }
     };
 
