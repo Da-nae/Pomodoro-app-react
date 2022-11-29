@@ -104,7 +104,7 @@ function App() {
                 </div>
                 <div className="flex row flex-wrap items-start mx-auto">
                     <div className="flex flex-col items-center justify-center content-center m-auto mt-0">
-                    <div className="p-6 rounded-lg shadow-lg  bg-darker mt-10 overflow-hidden mb-14 flex flex-col items-center">
+                    <div className="p-6 rounded-lg shadow-lg  bg-darker mt-10 overflow-hidden mb-10 flex flex-col items-center">
                         <div className="btnsTop flex content-between items-center justify-center">
                             <button
                                 type="button"
