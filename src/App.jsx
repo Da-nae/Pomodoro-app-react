@@ -11,7 +11,7 @@ import soundbite from "./assets/soundbite.wav"
 import {useState, useEffect} from "react";
 
 function App() {
-    const [secs, setSecs] = useState(2);
+    const [secs, setSecs] = useState(25 * 60);
     const [isActive, setIsActive] = useState(false);
     const [isShowing, setIsShowing] = useState(false);
     const [theme, setTheme] = useState("peach");
