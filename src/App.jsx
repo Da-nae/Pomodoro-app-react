@@ -11,7 +11,7 @@ import soundbite from "./assets/soundbite.wav"
 import {useState, useEffect} from "react";
 
 function App() {
-    const [secs, setSecs] = useState(25 * 60);
+    const [secs, setSecs] = useState(2);
     const [isActive, setIsActive] = useState(false);
     const [isShowing, setIsShowing] = useState(false);
     const [theme, setTheme] = useState("peach");
@@ -137,8 +137,11 @@ function App() {
                             <Modal
                                 setIsShowing={setIsShowing}
                                 isShowing={isShowing}
+                                setIsActive={setIsActive}
+                                isActive={isActive}
                                 Worktime={Worktime}
                                 theme={theme}
+                                BreaktimeReset={BreaktimeReset}
                             />
                         )}
                     </div>

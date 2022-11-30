@@ -1,4 +1,4 @@
-const Modal = ({setIsShowing, Worktime, theme}) => {
+const Modal = ({setIsShowing, isShowing, Worktime, theme, BreaktimeReset, setIsActive, isActive}) => {
 
     return (
         <div className="modal-bg fixed flex pt-20 justify-center top-0 left-0 w-full h-full outline-none overflow-x-hidden overflow-y-auto z-20 bg-gray-900/70">

@@ -1,5 +1,5 @@
 import {VscDebugRestart} from "react-icons/vsc";
-import {useEffect} from "react";
+import useInterval from 'use-interval'
 
 function Timer({secs, setSecs, isActive, setIsActive, BtnPlus, BtnMinus, setIsShowing, Worktime, Breaktime, theme, audio}) {
     // Button Start/Pause to activate and deactivate the timer :
@@ -7,23 +7,22 @@ function Timer({secs, setSecs, isActive, setIsActive, BtnPlus, BtnMinus, setIsSh
         setIsActive(!isActive);
     }
 
-    // Function to make the timer decrement 1 second at a time and display a modal at the 0 count : 
-    useEffect(() => {
+    // Function to make the timer decrement 1 second at a time and display a modal at the 0 count :
+    useInterval(() => {
         let interval = null;
 
-        if (secs > 0 && isActive) {
-            interval = setInterval(() => {
-                setSecs((secs) => secs - 1);
-            }, 1000);
-        } else if (!isActive && secs !== 0) {
+        if (secs > 1 && isActive) {
+            interval = setSecs((secs) => secs - 1);
+        } else if (!isActive && secs !== 60) {
             clearInterval(interval);
-        } else if(secs == 0) {
+        } else if(secs == 1) {
             setIsShowing(true);
             setIsActive(false);
+            setSecs(0);
             audio.play();
         }
         return () => clearInterval(interval);
-    }, [isActive, secs]);
+    }, 1000);
 
     // Display of the time on the page, changing the total of seconds to hours, minutes and seconds :
     const Time = (secs) => {
